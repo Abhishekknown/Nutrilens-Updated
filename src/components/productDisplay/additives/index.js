@@ -25,7 +25,7 @@ const Additives = (product) => {
       return null;
     }
     return (
-      <>
+      <div className='additive__data'>
         <span className="additive__name">
           - {x.name}
         </span>
@@ -35,7 +35,7 @@ const Additives = (product) => {
         <div>
           Function: {x.function}
         </div>
-      </>
+      </div>
     )
   }
 
@@ -55,10 +55,12 @@ const Additives = (product) => {
     );
   }
 
-  return (<section className="additives__section">
-    <h3 className="productDisplay__sectionTitle">Additives</h3>
-    {displayAdditives()}
-  </section>);
+  return ( <section className="productDisplay__section">
+  <h3 className="productDisplay__sectionTitle">Aditive</h3>
+  <hr />
+  <div className='data-view'> {displayAdditives()}</div>
+</section>
+  )
 };
 
 export default Additives;

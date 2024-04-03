@@ -13,7 +13,7 @@ const ProductDisplayTitle = ({productName, code, thumb}) => (
     </div>
     <div className="productDisplay__textContainer">
       <h2 className="productDisplay__title">{productName}</h2>
-      <div className="productDisplay__barcode">{code}</div>
+      <p className="">Barcode : {code}</p>
     </div>
   </div>
 );

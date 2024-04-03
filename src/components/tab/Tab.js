@@ -11,15 +11,15 @@ const Tab = () => (
   <div className="footer">
     <Link className="footer__link" to="/" >
       <Camera />
-      Scan
+      scan
     </Link>
     <Link className="footer__link" to="/history">
       <Clock />
-      History
+     History
     </Link>
     <Link className="footer__link" to="/search">
       <Search />
-      Search by Food
+      Search Food
     </Link>
   </div>
 );

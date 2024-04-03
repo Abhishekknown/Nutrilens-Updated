@@ -96,6 +96,7 @@ const Video = ({ history }) => {
           <div>
             <div className="video" id="video" />
             {videoInit ? '' : <VideoSkeleton />}
+            <p className='warning'>PLEASE HOLD THE DEVISE STILL WHILE SCANING THE PRODUCT</p>
           </div>
         }
       </div>

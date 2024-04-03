@@ -17,6 +17,7 @@ const DietaryData = (product) => {
 
   return (<div className="productDisplay__section">
     <h3 className="productDisplay__sectionTitle">Special Diets</h3>
+    <hr />
     <div className="productDisplay__list--item">
       <span><span role="img" aria-label="plant">🌱</span> Plant Based:</span>
       {displayDietaryDataItem(product.product.isPlantBased())}

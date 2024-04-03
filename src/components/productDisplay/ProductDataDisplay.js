@@ -12,6 +12,8 @@ import AddProductInfo from '../addProductInfo';
 import NutriScore from '../nutriScore';
 import NovaGroup from '../novaGroup';
 import EcoScore from '../ecoScore';
+import Ingredients from './Ingredients';
+import PackagedItem from './PackagedItem'
 
 const ProductDataDisplay = ({ data }) => {
   const { code, status, product } = data;
@@ -63,10 +65,15 @@ const ProductDataDisplay = ({ data }) => {
       </div>
       {p !== undefined ?
         (<>
-          <NutrientLevels product={p}/>
+        <div className='productinfo '>
+        <div className='layout'>
+         <NutrientLevels product={p}/>
           <DietaryData product={p} />
+         </div>
           <Additives product={p} />
-          <AddProductInfo status={status} barcode={code} />
+          <Ingredients/>
+          <PackagedItem/>
+        </div>
         </>)
         :
         <> </>

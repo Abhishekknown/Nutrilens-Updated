@@ -42,14 +42,37 @@ class ProductDataFilter {
       .length > 0;
   }
 
-  nutrientLevels() {
-    if (this.isUndefined('nutrient_levels')) {
+  // nutrientLevels() {
+  //   if (this.isUndefined('nutrient_levels')) {
+  //     return undefined;
+  //   }
+
+  //   return Object.keys(this.d.nutrient_levels).map(k => ({
+  //     title: k.replace('-', ' '),
+  //     value: this.d.nutrient_levels[k]
+  //   }))
+  // }
+
+  cleanMaterialData(data) {
+    return data.map(item => {
+        if (item.material) {
+            // Remove 'en' and replace '-' with space
+            return item.material.replace(/^en-?/, '').replace(/-/g, ' ');
+        } else {
+            return null;
+        }
+    });
+}
+
+  
+  nutriments() {
+    if (this.isUndefined('nutriments')) {
       return undefined;
     }
 
-    return Object.keys(this.d.nutrient_levels).map(k => ({
+    return Object.keys(this.d.nutriments).map(k => ({
       title: k.replace('-', ' '),
-      value: this.d.nutrient_levels[k]
+      value: this.d.nutriments[k]
     }))
   }
 

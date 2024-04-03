@@ -25,3 +25,17 @@
 .additive__risk--value.low {
   color: #3cb371;
 }
+
+.data-view{
+  display: flex ;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.additive__data{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

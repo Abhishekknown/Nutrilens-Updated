@@ -6,6 +6,10 @@
   overflow-y: scroll;
 }
 
+.history__list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
 .history__listItem {
   width: 100%;
   display: flex;

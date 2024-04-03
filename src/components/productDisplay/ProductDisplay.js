@@ -13,6 +13,7 @@ const ProductDisplay = (props) => {
   const onInfoFetched = (result) => {
     setProductInfo(result);
     setIsLoading(false);
+    console.log(result)
   }
 
   useEffect(() => {

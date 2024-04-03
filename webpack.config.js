@@ -15,6 +15,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // Specify the output folder for images
+            },
+          },
+        ],
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -26,6 +38,7 @@ module.exports = {
         use: [{
           loader: MiniCssExtractPlugin.loader,
         },
+        
         'css-loader'
         ],
       },
@@ -42,7 +55,7 @@ module.exports = {
         use: [{
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]',
+                name: '[name].[text]',
                 outputPath: 'fonts/'
             }
         }]

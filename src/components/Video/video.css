@@ -9,15 +9,17 @@
 
 .video__container {
   position: relative;
-  height: 50vh;
+  height: 35vh;
   width: 680px;
   margin-top: 20px;
 }
 
+
 .video {
-  height: 100%;
+  height: 35vh;
   width: 100%;
   overflow: hidden;
+  margin-top: 50px;
 }
 
 .video video {
@@ -35,4 +37,10 @@
 
 .skeleton__unsopported video {
   display: none;
+}
+
+.warning{
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 100px;
 }
