@@ -16,7 +16,7 @@ const HistoryDisplay = () => {
   const deleteProduct = (id) => {
     setProducts(HistoryHandler.deleteProduct(id));
   }
-
+  
   return (
     <div className="history__list">
       {products === null ?
@@ -29,7 +29,8 @@ const HistoryDisplay = () => {
         </div>
         :
         products.map((x) => {
-          const { thumb, name } = JSON.parse(x.data);
+          const { thumb, name , } = JSON.parse(x.data);
+          
           return (
             <div key={name} className="history__listItem">
               <div className="history__delete">

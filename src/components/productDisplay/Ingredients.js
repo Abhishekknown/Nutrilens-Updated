@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Ingredients = () => {
+const Ingredients = ({ product }) => {
+    const displayContent = product && product.length > 0 ? product : "None";
 
     return (
         <section className="productDisplay__section">
             <h3 className="productDisplay__sectionTitle">Ingredients</h3>
-          <hr />
+            <hr />
             <div className="productDisplay__paragraph--item">
-                <span className="productDisplay__list--value">Hello</span>
+                {displayContent}
             </div>
         </section>
     );

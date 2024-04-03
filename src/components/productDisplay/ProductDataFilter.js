@@ -53,17 +53,7 @@ class ProductDataFilter {
   //   }))
   // }
 
-  cleanMaterialData(data) {
-    return data.map(item => {
-        if (item.material) {
-            // Remove 'en' and replace '-' with space
-            return item.material.replace(/^en-?/, '').replace(/-/g, ' ');
-        } else {
-            return null;
-        }
-    });
-}
-
+ 
   
   nutriments() {
     if (this.isUndefined('nutriments')) {
@@ -75,6 +65,23 @@ class ProductDataFilter {
       value: this.d.nutriments[k]
     }))
   }
+  
+  packageItem() {
+    if (this.isUndefined('Package')) {
+      return undefined;
+    }
+
+    if (typeof this.d.packageItem === 'string') {
+      return [{ title: this.d.packageItem.replace(':', ' '), value: this.d.nutriments[this.d.packageItem] }];
+    }
+
+    return Object.keys(this.d.packageItem).map(k => ({
+      title: k.replace(':', ' '),
+      value: this.d.nutriments[k]
+    }));
+}
+
+
 
   containsPalmOil() {
     if (!this.d.ingredients_from_palm_oil_n) {

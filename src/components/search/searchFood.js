@@ -36,7 +36,7 @@ export default function GetData() {
     };
 
     return (
-        <div className='searchPage_Wrapper'>
+        <>
             <div className='searchPage_Container'>
                 <form onSubmit={handleSubmit} className='searchFood_FormField'>
                     <input
@@ -115,6 +115,6 @@ export default function GetData() {
 
 
             </div>
-        </div>
+        </>
     );
 }

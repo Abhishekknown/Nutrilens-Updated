@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 50px;
 }
 
 .searchFood_Input {
@@ -27,6 +28,7 @@
     border-radius: 0.25rem;
     margin-right: 1.5rem;
     color: black;
+    background-color: transparent;
 }
 
 .search_btn{
@@ -36,26 +38,28 @@
 
 
 .results{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 40px;
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with minimum column width of 300px */
+  grid-auto-rows: auto; /* Allow grid items to wrap onto multiple rows */
+  gap: 50px;
+  width: 70vw;
+  margin-top: 50px;
+  margin-bottom:100px ;
 }
 
 .result_card{
+
   display: flex;
   flex-direction: column;
-  min-width: 350px;
-  width: 400;
-  max-width: 500px;
+  width: 350px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .result_head{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:0 15px;
   background-color: white;
   border-radius:5px;
 }
@@ -75,7 +79,7 @@
 
 .result_content{
   margin-top:15px;
-  padding-left: 20px;
+
 }
 .title{
   font-size: 14px;
@@ -85,7 +89,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding:20px 15px;
   background-color: white;
   border-radius:5px;
 }

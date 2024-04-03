@@ -18,7 +18,7 @@ import PackagedItem from './PackagedItem'
 const ProductDataDisplay = ({ data }) => {
   const { code, status, product } = data;
   const [p, setP] = useState(undefined);
-
+console.log(data)
   useEffect(() => {
     if (status === 1) {
       const filteredProduct = new ProductDataFilter(product);
@@ -38,30 +38,12 @@ const ProductDataDisplay = ({ data }) => {
 
   return (
     <div className="productDisplay__container">
-      <ProductDisplayTitle code={code} productName={product.product_name} thumb={product.image_thumb_url}/>
+      <ProductDisplayTitle code={code} productName={product.product_name} thumb={product.image_thumb_url} quantity={product.quantity} packageItem={product.packagings} brand={product.brands} />
       <div className="productDisplay__scores">
         <NutriScore score={product.nutrition_grades} extraClass="nutriscore__detail" />
         <NovaGroup group={product.nova_group} tag={product.nova_groups_tags} />
         <EcoScore score={product.ecoscore_grade} />
-        {
-      window.botpressWebChat.init({
-        "composerPlaceholder": "Chat with Nutri Asistent ",
-        "botConversationDescription": "Im here to assist you  just say hi ",
-        "botId": "7cfe4e41-832a-4112-9859-f60d11e61d0e",
-        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
-        "messagingUrl": "https://messaging.botpress.cloud",
-        "clientId": "7cfe4e41-832a-4112-9859-f60d11e61d0e",
-        "webhookId": "d149c281-fda4-45f8-8bcf-761b53b1db52",
-        "lazySocket": true,
-        "themeName": "prism",
-        "botName": "Nutri Asistent ",
-        "frontendVersion": "v1",
-        "useSessionStorage": true,
-        "enableConversationDeletion": true,
-        "theme": "prism",
-        "themeColor": "#2563eb"
-      })
-    }
+      
       </div>
       {p !== undefined ?
         (<>
@@ -71,7 +53,7 @@ const ProductDataDisplay = ({ data }) => {
           <DietaryData product={p} />
          </div>
           <Additives product={p} />
-          <Ingredients/>
+          <Ingredients product={product.ingredients_text_en_ocr_1643128902}/>
           <PackagedItem/>
         </div>
         </>)
